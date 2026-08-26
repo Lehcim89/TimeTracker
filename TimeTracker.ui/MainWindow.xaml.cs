@@ -16,10 +16,9 @@ namespace TimeTracker.ui
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(MainWindowViewModel vm)
+        public MainWindow()
         {
             InitializeComponent();
-            DataContext = vm;
         }
     }
 }

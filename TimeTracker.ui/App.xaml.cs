@@ -26,7 +26,6 @@ namespace TimeTracker.ui
                 .ConfigureServices((context, services) =>
                 {
                     //Register Classes and Services
-                    services.AddSingleton<MainWindow>();
                     services.AddSingleton<MainWindowViewModel>();
                 }).Build();
         }
@@ -37,8 +36,11 @@ namespace TimeTracker.ui
 
             Host.Start();
 
-            var mainWindow = Host.Services.GetRequiredService<MainWindow>(); // instanciate mainWindow to prepare it for possible later use
-            // the datacontext gets set in the class itself
+            var mainWindow = new MainWindow
+            {
+                DataContext = Host.Services.GetRequiredService<MainWindowViewModel>()
+            }; 
+
             mainWindow.Show();
         }
 
