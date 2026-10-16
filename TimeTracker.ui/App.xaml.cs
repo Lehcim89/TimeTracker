@@ -12,7 +12,7 @@ namespace TimeTracker.ui
     /// </summary>
     public partial class App : Application
     {
-        
+
         public static IHost Host { get; private set; }
         public App()
         {
@@ -39,7 +39,7 @@ namespace TimeTracker.ui
             var mainWindow = new MainWindow
             {
                 DataContext = Host.Services.GetRequiredService<MainWindowViewModel>()
-            }; 
+            };
 
             mainWindow.Show();
         }
